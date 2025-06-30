@@ -1,24 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Student Teaching App</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
-  <script src="firebase-config.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Login/Register</h1>
-  <input type="email" id="email" placeholder="Email" />
-  <input type="password" id="password" placeholder="Password" />
-  <select id="role">
-    <option value="student">Student</option>
-    <option value="teacher">Teacher</option>
-  </select>
-  <button onclick="register()">Register</button>
-  <button onclick="login()">Login</button>
+  <div class="container">
+    <h1>Welcome to the Student–Teacher App</h1>
+    <p>Choose your role to continue:</p>
 
-<script type="module" src="firebase-config.js"></script>
+    <div class="button-group">
+      <a href="login.html?role=student" class="btn">Student Login</a>
+      <a href="login.html?role=teacher" class="btn">Teacher Login</a>
+    </div>
+  </div>
 </body>
 </html>
