@@ -1,78 +1,87 @@
-// Student registration
+// Register Student
 function registerStudent() {
-  const name = document.getElementById("name").value.trim();
-  const dob = document.getElementById("dob").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const mobile = document.getElementById("mobile").value.trim();
-  const studentClass = document.getElementById("class").value.trim();
-  const subject = document.getElementById("subject").value.trim();
-  const password = document.getElementById("password").value.trim();
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-  if (password.length < 6) {
-    alert("Password must be at least 6 characters.");
-    return;
-  }
-
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((userCred) => {
-      const uid = userCred.user.uid;
-      return firebase.firestore().collection("users").doc(uid).set({
+  auth.createUserWithEmailAndPassword(email, password)
+    .then(cred => {
+      return db.collection("users").doc(cred.user.uid).set({
         name,
-        dob,
         email,
-        mobile,
-        class: studentClass,
-        subject,
-        role: "student",
-        approved: true,  // ✅ auto-approve
-        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        role: "student"
       });
     })
     .then(() => {
       alert("Student registered successfully!");
-      window.location.href = "login.html";
+      window.location.href = "dashboard_student.html";
     })
     .catch(err => alert(err.message));
 }
 
-
-// Teacher registration
+// Register Teacher
 function registerTeacher() {
-  const name = document.getElementById("name").value.trim();
-  const dob = document.getElementById("dob").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const mobile = document.getElementById("mobile").value.trim();
-  const subject = document.getElementById("subject").value.trim();
-  const password = document.getElementById("password").value.trim();
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
   const file = document.getElementById("resume").files[0];
 
   if (!file || file.type !== "application/pdf") {
-    alert("Upload a valid PDF resume.");
+    alert("Please upload a PDF resume.");
     return;
   }
 
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((userCred) => {
-      const uid = userCred.user.uid;
-      const storageRef = firebase.storage().ref(`resumes/${uid}.pdf`);
+  auth.createUserWithEmailAndPassword(email, password)
+    .then(cred => {
+      const storageRef = storage.ref("resumes/" + cred.user.uid + ".pdf");
       return storageRef.put(file).then(() => storageRef.getDownloadURL())
-        .then((url) => {
-          return firebase.firestore().collection("users").doc(uid).set({
+        .then(url => {
+          return db.collection("users").doc(cred.user.uid).set({
             name,
-            dob,
             email,
-            mobile,
-            subject,
             role: "teacher",
-            resumeURL: url,
-            approved: true,
-            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+            resumeURL: url
           });
         });
     })
     .then(() => {
       alert("Teacher registered successfully!");
-      window.location.href = "login.html";
+      window.location.href = "dashboard_teacher.html";
     })
+    .catch(err => alert(err.message));
+}
+
+// Login
+function loginUser() {
+  const email = document.getElementById("loginEmail").value;
+  const password = document.getElementById("loginPassword").value;
+
+  auth.signInWithEmailAndPassword(email, password)
+    .then(cred => {
+      return db.collection("users").doc(cred.user.uid).get();
+    })
+    .then(doc => {
+      const data = doc.data();
+      if (data.role === "student") {
+        window.location.href = "dashboard_student.html";
+      } else if (data.role === "teacher") {
+        window.location.href = "dashboard_teacher.html";
+      }
+    })
+    .catch(err => alert(err.message));
+}
+
+// Logout
+function logoutUser() {
+  auth.signOut().then(() => {
+    window.location.href = "login.html";
+  });
+}
+
+// Forgot Password
+function resetPassword() {
+  const email = document.getElementById("resetEmail").value;
+  auth.sendPasswordResetEmail(email)
+    .then(() => alert("Password reset link sent."))
     .catch(err => alert(err.message));
 }
