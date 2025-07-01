@@ -3,18 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Student Teaching App</title>
+  <title>Student–Teacher App</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #00b4db, #0083b0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: white;
+      padding: 3rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .card h1 {
+      font-size: 28px;
+      color: #0083b0;
+      margin-bottom: 1rem;
+    }
+
+    .card p {
+      color: #444;
+      font-size: 16px;
+      margin-bottom: 2rem;
+    }
+
+    .card a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      background: #00b4db;
+      color: white;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .card a:hover {
+      background: #007299;
+    }
+
+    .footer {
+      text-align: center;
+      position: fixed;
+      bottom: 10px;
+      font-size: 13px;
+      color: #eee;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Welcome to the Student–Teacher App</h1>
-    <p>Choose your role to continue:</p>
 
-    <div class="button-group">
-      <a href="login.html?role=student" class="btn">Student Login</a>
-      <a href="login.html?role=teacher" class="btn">Teacher Login</a>
-    </div>
+  <div class="card">
+    <h1>Welcome to EduConnect</h1>
+    <p>Select your role to continue:</p>
+    <a href="login.html?role=student">Student Login</a>
+    <a href="login.html?role=teacher">Teacher Login</a>
+    <a href="register_student.html">Register as Student</a>
+    <a href="register_teacher.html">Register as Teacher</a>
   </div>
+
+  <div class="footer">© 2025 Student–Teacher App. All rights reserved.</div>
+
 </body>
 </html>
