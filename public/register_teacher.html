@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Teacher Registration</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Register - Teacher</title>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-storage-compat.js"></script>
+  <script src="firebase_config.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h2>Teacher Registration</h2>
-    <input id="name" placeholder="Full Name" />
-    <input id="dob" type="date" />
-    <input id="email" type="email" placeholder="Email" />
-    <input id="phone" type="text" placeholder="Phone Number" />
-    <input id="class" placeholder="Class to Teach" />
-    <input id="subject" placeholder="Subject Expertise" />
-    <input id="password" type="password" placeholder="Password" />
-    <input id="resume" type="file" accept=".pdf" />
-    <button onclick="registerTeacher()">Register</button>
-    <p id="msg" style="color:red;"></p>
-  </div>
-
-  <script src="https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/11.9.1/firebase-storage.js"></script>
-  <script src="firebase_config.js"></script>
+  <h2>Teacher Registration</h2>
+  <form onsubmit="registerTeacher(); return false;">
+    <input type="text" id="name" placeholder="Full Name" required><br><br>
+    <input type="email" id="email" placeholder="Email" required><br><br>
+    <input type="password" id="password" placeholder="Password (Mrkp@123)" required minlength="6"><br><br>
+    <input type="file" id="resume" accept="application/pdf" required><br><br>
+    <button type="submit">Register</button>
+  </form>
+  <p><a href="login.html">Already have an account? Login</a></p>
   <script src="script.js"></script>
 </body>
 </html>
