@@ -3,32 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <title>Register - Student</title>
+
+  <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-storage-compat.js"></script>
   <script src="firebase_config.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <h2>Student Registration</h2>
-<form onsubmit="registerStudent(); return false;">
-  <input type="text" id="name" placeholder="Full Name" required><br><br>
-
-  <input type="text" id="dob" placeholder="Date of Birth (DD-MM-YYYY)" required><br><br>
-
-  <input type="email" id="email" placeholder="Email" required><br><br>
-
-  <input type="text" id="mobile" placeholder="Mobile Number" required><br><br>
-
-  <input type="text" id="class" placeholder="Class (e.g., 10, 12)" required><br><br>
-
-  <input type="text" id="subject" placeholder="Subject (e.g., Math, History)" required><br><br>
-
-  <input type="password" id="password" placeholder="Password (Mrkp@123)" required><br><br>
-
-  <button type="submit">Register</button>
-</form>
-
-<p>Already have an account? <a href="login.html">Login</a></p>
+  <div class="form-container">
+    <h2>Student Registration</h2>
+    <form onsubmit="registerStudent(); return false;">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="text" id="dob" placeholder="Date of Birth (DD-MM-YYYY)" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="text" id="mobile" placeholder="Mobile Number" required>
+      <input type="text" id="class" placeholder="Class (e.g., 10, 12)" required>
+      <input type="text" id="subject" placeholder="Subject (e.g., Math, History)" required>
+      <input type="password" id="password" placeholder="Password (Mrkp@123)" required>
+      <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login</a></p>
+  </div>
 
   <script src="script.js"></script>
 </body>
