@@ -39,9 +39,9 @@
       margin-bottom: 2rem;
     }
 
-    .card a {
-      display: inline-block;
-      margin: 10px;
+    .btn-link {
+      display: block;
+      margin: 10px auto;
       padding: 12px 24px;
       border-radius: 8px;
       text-decoration: none;
@@ -49,9 +49,10 @@
       color: white;
       font-weight: bold;
       transition: background 0.3s ease;
+      width: 80%;
     }
 
-    .card a:hover {
+    .btn-link:hover {
       background: #007299;
     }
 
@@ -70,10 +71,11 @@
   <div class="card">
     <h1>Welcome to EduConnect</h1>
     <p>Select your role to continue:</p>
-    <a href="login.html?role=student">Student Login</a>
-    <a href="login.html?role=teacher">Teacher Login</a>
-    <a href="register_student.html">Register as Student</a>
-    <a href="register_teacher.html">Register as Teacher</a>
+
+    <a class="btn-link" href="login.html?role=student" target="_self">Student Login</a>
+    <a class="btn-link" href="login.html?role=teacher" target="_self">Teacher Login</a>
+    <a class="btn-link" href="register_student.html" target="_self">Register as Student</a>
+    <a class="btn-link" href="register_teacher.html" target="_self">Register as Teacher</a>
   </div>
 
   <div class="footer">© 2025 Student–Teacher App. All rights reserved.</div>
