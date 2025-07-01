@@ -63,9 +63,9 @@ function registerTeacher() {
             email,
             mobile,
             subject,
-            resumeURL: url,
             role: "teacher",
-            approved: true,  // ✅ auto-approve
+            resumeURL: url,
+            approved: true,
             createdAt: firebase.firestore.FieldValue.serverTimestamp()
           });
         });
