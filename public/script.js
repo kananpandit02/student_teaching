@@ -1,72 +1,94 @@
-const db = firebase.firestore();
-const storage = firebase.storage();
-
+// Student registration
 function registerStudent() {
   const name = document.getElementById("name").value.trim();
-  const dob = document.getElementById("dob").value.trim();
   const email = document.getElementById("email").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const studentClass = document.getElementById("class").value.trim();
-  const subject = document.getElementById("subject").value.trim();
   const password = document.getElementById("password").value.trim();
-  const msg = document.getElementById("msg");
 
-  if (!name || !email || !password) {
-    msg.textContent = "Please fill all fields.";
+  if (password.length < 6) {
+    alert("Password must be at least 6 characters.");
     return;
   }
 
   firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(cred => {
-      const uid = cred.user.uid;
-      return db.collection("users").doc(uid).set({
+    .then((userCred) => {
+      const uid = userCred.user.uid;
+      return firebase.firestore().collection("users").doc(uid).set({
+        name,
+        email,
         role: "student",
-        name, dob, email, phone, class: studentClass, subject,
-        approved: false
+        approved: false,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
       });
     })
     .then(() => {
-      msg.style.color = "green";
-      msg.textContent = "Registered! Wait for admin approval.";
+      alert("Student registered! Await admin approval.");
+      window.location.href = "login.html";
     })
-    .catch(err => msg.textContent = err.message);
+    .catch(err => alert(err.message));
 }
 
+// Teacher registration
 function registerTeacher() {
   const name = document.getElementById("name").value.trim();
-  const dob = document.getElementById("dob").value.trim();
   const email = document.getElementById("email").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const teacherClass = document.getElementById("class").value.trim();
-  const subject = document.getElementById("subject").value.trim();
   const password = document.getElementById("password").value.trim();
-  const resume = document.getElementById("resume").files[0];
-  const msg = document.getElementById("msg");
+  const file = document.getElementById("resume").files[0];
 
-  if (!name || !email || !password || !resume) {
-    msg.textContent = "All fields and resume are required.";
+  if (!file || file.type !== "application/pdf") {
+    alert("Upload a valid PDF resume.");
     return;
   }
 
-  let uid = null;
   firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(cred => {
-      uid = cred.user.uid;
-      const storageRef = storage.ref(`resumes/${uid}.pdf`);
-      return storageRef.put(resume);
-    })
-    .then(snapshot => snapshot.ref.getDownloadURL())
-    .then(url => {
-      return db.collection("users").doc(uid).set({
-        role: "teacher",
-        name, dob, email, phone, class: teacherClass, subject,
-        resumeURL: url,
-        approved: false
-      });
+    .then((userCred) => {
+      const uid = userCred.user.uid;
+      const storageRef = firebase.storage().ref(`resumes/${uid}.pdf`);
+      return storageRef.put(file).then(() => storageRef.getDownloadURL())
+        .then((url) => {
+          return firebase.firestore().collection("users").doc(uid).set({
+            name,
+            email,
+            role: "teacher",
+            resumeURL: url,
+            approved: false,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+          });
+        });
     })
     .then(() => {
-      msg.style.color = "green";
-      msg.textContent = "Teacher registered! Await admin approval.";
+      alert("Teacher registered! Await admin approval.");
+      window.location.href = "login.html";
     })
-    .catch(err => msg.textContent = err.message);
+    .catch(err => alert(err.message));
+}
+
+// Login (common)
+function loginUser() {
+  const email = document.getElementById("loginEmail").value.trim();
+  const password = document.getElementById("loginPassword").value.trim();
+
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then((userCred) => {
+      const uid = userCred.user.uid;
+      return firebase.firestore().collection("users").doc(uid).get();
+    })
+    .then((doc) => {
+      if (!doc.exists) {
+        throw new Error("No user record found.");
+      }
+      const user = doc.data();
+      if (!user.approved) {
+        alert("Your registration is pending admin approval.");
+        return firebase.auth().signOut();
+      }
+
+      if (user.role === "student") {
+        window.location.href = "dashboard_student.html";
+      } else if (user.role === "teacher") {
+        window.location.href = "dashboard_teacher.html";
+      } else {
+        alert("Unknown role.");
+      }
+    })
+    .catch(err => alert(err.message));
 }
