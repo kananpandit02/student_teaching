@@ -18,7 +18,7 @@ function registerStudent() {
         email,
         subject,   // ✅ store subject
         role: "student",
-        approved: false,
+        approved: true,
         createdAt: firebase.firestore.FieldValue.serverTimestamp()
       });
     })
@@ -55,7 +55,7 @@ function registerTeacher() {
             subject,   // ✅ store subject
             role: "teacher",
             resumeURL: url,
-            approved: false,
+            approved: true,
             createdAt: firebase.firestore.FieldValue.serverTimestamp()
           });
         });
