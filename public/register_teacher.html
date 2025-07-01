@@ -2,13 +2,12 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Register - Teacher</title>
+  <title>Register - Student</title>
 
   <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-storage-compat.js"></script>
   <script src="firebase_config.js"></script>
 
   <style>
@@ -53,8 +52,7 @@
 
     input[type="text"],
     input[type="email"],
-    input[type="password"],
-    input[type="file"] {
+    input[type="password"] {
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
@@ -63,7 +61,7 @@
     button {
       width: 100%;
       padding: 12px;
-      background-color: #28a745;
+      background-color: #007bff;
       color: white;
       font-weight: bold;
       border: none;
@@ -73,7 +71,7 @@
     }
 
     button:hover {
-      background-color: #218838;
+      background-color: #0056b3;
     }
 
     p {
@@ -94,18 +92,15 @@
 <body>
   <div class="center-wrapper">
     <div class="form-container">
-      <h2>Teacher Registration</h2>
-      <form onsubmit="registerTeacher(); return false;">
+      <h2>Student Registration</h2>
+      <form onsubmit="registerStudent(); return false;">
         <input type="text" id="name" placeholder="Full Name" required>
         <input type="text" id="dob" placeholder="Date of Birth (DD-MM-YYYY)" required>
         <input type="email" id="email" placeholder="Email" required>
-        <input type="password" id="password" placeholder="Password (Mrkp@123)" required>
         <input type="text" id="mobile" placeholder="Mobile Number" required>
-        <input type="text" id="subject" placeholder="Subject (e.g., Math, Physics)" required>
-
-        <label for="resume">Upload Resume (PDF only):</label>
-        <input type="file" id="resume" accept="application/pdf" required>
-
+        <input type="text" id="class" placeholder="Class (e.g., 10, 12)" required>
+        <input type="text" id="subject" placeholder="Subject (e.g., Math, History)" required>
+        <input type="password" id="password" placeholder="Password (Mrkp@123)" required>
         <button type="submit">Register</button>
       </form>
       <p>Already have an account? <a href="login.html">Login</a></p>
