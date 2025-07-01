@@ -1,9 +1,12 @@
 // Student registration
 function registerStudent() {
   const name = document.getElementById("name").value.trim();
+  const dob = document.getElementById("dob").value.trim();
   const email = document.getElementById("email").value.trim();
+  const mobile = document.getElementById("mobile").value.trim();
+  const studentClass = document.getElementById("class").value.trim();
+  const subject = document.getElementById("subject").value.trim();
   const password = document.getElementById("password").value.trim();
-  const subject = document.getElementById("subject").value.trim();  // ✅ added
 
   if (password.length < 6) {
     alert("Password must be at least 6 characters.");
@@ -15,15 +18,18 @@ function registerStudent() {
       const uid = userCred.user.uid;
       return firebase.firestore().collection("users").doc(uid).set({
         name,
+        dob,
         email,
-        subject,   // ✅ store subject
+        mobile,
+        class: studentClass,
+        subject,
         role: "student",
-        approved: true,
+        approved: true,  // ✅ auto-approve
         createdAt: firebase.firestore.FieldValue.serverTimestamp()
       });
     })
     .then(() => {
-      alert("Student registered! Await admin approval.");
+      alert("Student registered successfully!");
       window.location.href = "login.html";
     })
     .catch(err => alert(err.message));
@@ -33,9 +39,11 @@ function registerStudent() {
 // Teacher registration
 function registerTeacher() {
   const name = document.getElementById("name").value.trim();
+  const dob = document.getElementById("dob").value.trim();
   const email = document.getElementById("email").value.trim();
+  const mobile = document.getElementById("mobile").value.trim();
+  const subject = document.getElementById("subject").value.trim();
   const password = document.getElementById("password").value.trim();
-  const subject = document.getElementById("subject").value.trim(); // ✅ added
   const file = document.getElementById("resume").files[0];
 
   if (!file || file.type !== "application/pdf") {
@@ -51,17 +59,19 @@ function registerTeacher() {
         .then((url) => {
           return firebase.firestore().collection("users").doc(uid).set({
             name,
+            dob,
             email,
-            subject,   // ✅ store subject
-            role: "teacher",
+            mobile,
+            subject,
             resumeURL: url,
-            approved: true,
+            role: "teacher",
+            approved: true,  // ✅ auto-approve
             createdAt: firebase.firestore.FieldValue.serverTimestamp()
           });
         });
     })
     .then(() => {
-      alert("Teacher registered! Await admin approval.");
+      alert("Teacher registered successfully!");
       window.location.href = "login.html";
     })
     .catch(err => alert(err.message));
