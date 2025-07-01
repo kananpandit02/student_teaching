@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Student Registration</h2>
+    <input id="name" placeholder="Full Name" />
+    <input id="dob" type="date" />
+    <input id="email" type="email" placeholder="Email" />
+    <input id="phone" type="text" placeholder="Phone Number" />
+    <input id="class" placeholder="Class" />
+    <input id="subject" placeholder="Subject" />
+    <input id="password" type="password" placeholder="Password" />
+    <button onclick="registerStudent()">Register</button>
+    <p id="msg" style="color:red;"></p>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js"></script>
+  <script src="firebase_config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
