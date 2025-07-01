@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Login</title>
-  <link rel="stylesheet" href="style.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="firebase_config.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h2>Login</h2>
-    <input type="email" id="email" placeholder="Email" />
-    <input type="password" id="password" placeholder="Password" />
-    <button onclick="login()">Login</button>
-    <p id="msg" style="color: red;"></p>
-  </div>
-
-  <script src="firebase_config.js"></script>
+  <h2>Login</h2>
+  <form onsubmit="loginUser(); return false;">
+    <input type="email" id="loginEmail" placeholder="Email" required><br><br>
+    <input type="password" id="loginPassword" placeholder="Password" required><br><br>
+    <button type="submit">Login</button>
+  </form>
+  <p><a href="register_student.html">Register as Student</a> |
+     <a href="register_teacher.html">Register as Teacher</a></p>
   <script src="script.js"></script>
 </body>
 </html>
