@@ -1,4 +1,3 @@
-// Firebase Web App Config (from your Firebase Console)
 const firebaseConfig = {
   apiKey: "AIzaSyAwaM9fk8464I39wCGcLDGANvKyhgB__so",
   authDomain: "student-teaching-c91d5.firebaseapp.com",
