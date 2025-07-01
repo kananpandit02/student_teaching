@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -82,6 +82,29 @@
     <p>Already have an account? <a href="login.html">Login</a></p>
   </div>
 
+  <script src="script.js"></script>
+</body>
+</html>
+ --
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register Student</title>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="firebase_config.js"></script>
+</head>
+<body>
+  <h2>Student Registration</h2>
+  <form onsubmit="registerStudent(); return false;">
+    <input type="text" id="name" placeholder="Full Name" required><br><br>
+    <input type="email" id="email" placeholder="Email" required><br><br>
+    <input type="password" id="password" placeholder="Password (Mrkp@123)" required><br><br>
+    <button type="submit">Register</button>
+  </form>
   <script src="script.js"></script>
 </body>
 </html>
