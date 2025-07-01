@@ -10,18 +10,26 @@
 </head>
 <body>
   <h2>Student Registration</h2>
-  <form onsubmit="registerStudent(); return false;">
+<form onsubmit="registerStudent(); return false;">
   <input type="text" id="name" placeholder="Full Name" required><br><br>
+
   <input type="text" id="dob" placeholder="Date of Birth (DD-MM-YYYY)" required><br><br>
+
   <input type="email" id="email" placeholder="Email" required><br><br>
+
   <input type="text" id="mobile" placeholder="Mobile Number" required><br><br>
-  <input type="text" id="class" placeholder="Class (e.g., 12)" required><br><br>
-  <input type="text" id="subject" placeholder="Subject (e.g., Math)" required><br><br>
-  <input type="password" id="password" placeholder="Password (Mrkp@123)" required minlength="6"><br><br>
+
+  <input type="text" id="class" placeholder="Class (e.g., 10, 12)" required><br><br>
+
+  <input type="text" id="subject" placeholder="Subject (e.g., Math, History)" required><br><br>
+
+  <input type="password" id="password" placeholder="Password (Mrkp@123)" required><br><br>
+
   <button type="submit">Register</button>
 </form>
 
-  <p><a href="login.html">Already have an account? Login</a></p>
+<p>Already have an account? <a href="login.html">Login</a></p>
+
   <script src="script.js"></script>
 </body>
 </html>
