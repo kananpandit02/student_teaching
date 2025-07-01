@@ -87,7 +87,6 @@
 </html>
  --
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -96,15 +95,41 @@
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
   <script src="firebase_config.js"></script>
+  <style>
+    body {
+      display: flex; justify-content: center; align-items: center;
+      height: 100vh; margin: 0; font-family: Arial, sans-serif;
+      background: #f0f0f0;
+    }
+    .form-container {
+      background: white; padding: 20px; border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1); width: 300px;
+    }
+    input, button {
+      width: 100%; padding: 10px; margin: 8px 0; border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #007bff; color: white; border: none;
+    }
+  </style>
 </head>
 <body>
-  <h2>Student Registration</h2>
-  <form onsubmit="registerStudent(); return false;">
-    <input type="text" id="name" placeholder="Full Name" required><br><br>
-    <input type="email" id="email" placeholder="Email" required><br><br>
-    <input type="password" id="password" placeholder="Password (Mrkp@123)" required><br><br>
-    <button type="submit">Register</button>
-  </form>
+  <div class="form-container">
+    <h2>Student Registration</h2>
+    <form onsubmit="registerStudent(); return false;">
+      <input id="name" placeholder="Full Name" required>
+      <input id="dob" placeholder="Date of Birth" required>
+      <input id="email" type="email" placeholder="Email" required>
+      <input id="mobile" placeholder="Mobile Number" required>
+      <input id="class" placeholder="Class (e.g. 10, 12)" required>
+      <input id="subject" placeholder="Subject" required>
+      <input id="password" type="password" placeholder="Password (Mrkp@123)" required>
+      <button type="submit">Register</button>
+    </form>
+    <p><a href="login.html">Already have an account?</a></p>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
+
