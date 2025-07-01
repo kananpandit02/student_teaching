@@ -12,56 +12,73 @@
   <script src="firebase_config.js"></script>
 
   <style>
-    body {
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
+      height: 100%;
       font-family: Arial, sans-serif;
-      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .center-wrapper {
       display: flex;
       justify-content: center;
       align-items: center;
+      height: 100%;
     }
 
     .form-container {
       background: white;
-      padding: 30px;
+      padding: 30px 25px;
       border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
       width: 100%;
       max-width: 400px;
-      text-align: center;
     }
 
-    input {
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input, label {
       width: 100%;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="file"] {
       padding: 10px;
-      margin: 8px 0;
       border: 1px solid #ccc;
       border-radius: 5px;
-    }
-
-    label {
-      display: block;
-      margin-top: 10px;
-      text-align: left;
-      font-size: 14px;
-      font-weight: bold;
     }
 
     button {
       width: 100%;
       padding: 12px;
-      background: #28a745;
+      background-color: #28a745;
       color: white;
+      font-weight: bold;
       border: none;
       border-radius: 5px;
-      font-weight: bold;
       cursor: pointer;
+      margin-top: 10px;
     }
 
     button:hover {
-      background: #218838;
+      background-color: #218838;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 15px;
     }
 
     a {
@@ -75,22 +92,24 @@
   </style>
 </head>
 <body>
-  <div class="form-container">
-    <h2>Teacher Registration</h2>
-    <form onsubmit="registerTeacher(); return false;">
-      <input type="text" id="name" placeholder="Full Name" required>
-      <input type="text" id="dob" placeholder="Date of Birth (DD-MM-YYYY)" required>
-      <input type="email" id="email" placeholder="Email" required>
-      <input type="password" id="password" placeholder="Password (Mrkp@123)" required>
-      <input type="text" id="mobile" placeholder="Mobile Number" required>
-      <input type="text" id="subject" placeholder="Subject (e.g., Math, Physics)" required>
+  <div class="center-wrapper">
+    <div class="form-container">
+      <h2>Teacher Registration</h2>
+      <form onsubmit="registerTeacher(); return false;">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="text" id="dob" placeholder="Date of Birth (DD-MM-YYYY)" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password (Mrkp@123)" required>
+        <input type="text" id="mobile" placeholder="Mobile Number" required>
+        <input type="text" id="subject" placeholder="Subject (e.g., Math, Physics)" required>
 
-      <label>Upload Resume (PDF only):</label>
-      <input type="file" id="resume" accept="application/pdf" required>
+        <label for="resume">Upload Resume (PDF only):</label>
+        <input type="file" id="resume" accept="application/pdf" required>
 
-      <button type="submit">Register</button>
-    </form>
-    <p>Already have an account? <a href="login.html">Login</a></p>
+        <button type="submit">Register</button>
+      </form>
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
   </div>
 
   <script src="script.js"></script>
