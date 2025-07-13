@@ -1,0 +1,658 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   EduLearn - Modern Educational App with Instructors, Pricing, About, Contact, Courses, Login &amp; Signup
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+    font-family: 'Inter', sans-serif;
+   }
+  </style>
+ </head>
+ <body class="bg-gradient-to-r from-purple-600 via-pink-600 to-red-500 text-gray-100">
+  <header class="bg-gradient-to-r from-purple-800 via-pink-800 to-red-700 shadow-md sticky top-0 z-50">
+   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <div class="flex justify-between items-center py-5">
+     <a class="text-3xl font-extrabold text-white tracking-tight hover:text-yellow-400 transition" href="#">
+      EduLearn
+     </a>
+     <nav class="hidden md:flex space-x-10 font-semibold text-gray-200">
+      <a class="hover:text-yellow-400 transition" href="#home">
+       Home
+      </a>
+      <a class="hover:text-yellow-400 transition" href="#courses">
+       Courses
+      </a>
+      <a class="hover:text-yellow-400 transition" href="#instructors">
+       Instructors
+      </a>
+      <a class="hover:text-yellow-400 transition" href="#features">
+       Features
+      </a>
+      <a class="hover:text-yellow-400 transition" href="#pricing">
+       Pricing
+      </a>
+      <a class="hover:text-yellow-400 transition" href="#about">
+       About
+      </a>
+      <a class="hover:text-yellow-400 transition" href="#contact">
+       Contact
+      </a>
+      <a class="hover:text-yellow-400 transition cursor-pointer" id="login-link">
+       Log In
+      </a>
+      <a class="hover:text-yellow-400 transition cursor-pointer" id="signup-link">
+       Sign Up
+      </a>
+     </nav>
+     <div class="md:hidden flex items-center space-x-4">
+      <button aria-label="Log In" id="login-link-mobile" class="text-yellow-400 font-semibold hover:text-yellow-300 focus:outline-none">
+       Log In
+      </button>
+      <button aria-label="Sign Up" id="signup-link-mobile" class="text-yellow-400 font-semibold hover:text-yellow-300 focus:outline-none">
+       Sign Up
+      </button>
+      <button aria-label="Toggle menu" class="text-gray-200 focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded-md p-2 hover:bg-yellow-400 hover:text-purple-900 transition" id="menu-btn">
+       <i class="fas fa-bars fa-lg">
+       </i>
+      </button>
+     </div>
+    </div>
+   </div>
+   <div class="hidden md:hidden bg-gradient-to-r from-purple-800 via-pink-800 to-red-700 border-t border-yellow-400 shadow-lg" id="mobile-menu">
+    <nav class="px-6 py-6 space-y-2 font-semibold text-gray-200">
+     <a class="block rounded-md px-4 py-2 hover:bg-yellow-400 hover:text-purple-900 transition" href="#home">
+      Home
+     </a>
+     <a class="block rounded-md px-4 py-2 hover:bg-yellow-400 hover:text-purple-900 transition" href="#courses">
+      Courses
+     </a>
+     <a class="block rounded-md px-4 py-2 hover:bg-yellow-400 hover:text-purple-900 transition" href="#instructors">
+      Instructors
+     </a>
+     <a class="block rounded-md px-4 py-2 hover:bg-yellow-400 hover:text-purple-900 transition" href="#features">
+      Features
+     </a>
+     <a class="block rounded-md px-4 py-2 hover:bg-yellow-400 hover:text-purple-900 transition" href="#pricing">
+      Pricing
+     </a>
+     <a class="block rounded-md px-4 py-2 hover:bg-yellow-400 hover:text-purple-900 transition" href="#about">
+      About
+     </a>
+     <a class="block rounded-md px-4 py-2 hover:bg-yellow-400 hover:text-purple-900 transition" href="#contact">
+      Contact
+     </a>
+     <a class="block rounded-md px-4 py-2 hover:bg-yellow-400 hover:text-purple-900 transition cursor-pointer" id="login-link-mobile-menu">
+      Log In
+     </a>
+     <a class="block rounded-md px-4 py-2 hover:bg-yellow-400 hover:text-purple-900 transition cursor-pointer" id="signup-link-mobile-menu">
+      Sign Up
+     </a>
+    </nav>
+   </div>
+  </header>
+  <main class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16" id="home">
+   <section class="text-center max-w-4xl mx-auto mb-20">
+    <h1 class="text-5xl sm:text-6xl font-extrabold text-yellow-400 leading-tight mb-6 drop-shadow-lg">
+     Unlock Your Potential with
+     <span class="text-white">
+      EduLearn
+     </span>
+    </h1>
+    <p class="text-lg sm:text-xl text-yellow-100 mb-8 max-w-3xl mx-auto">
+     Join thousands of learners worldwide and access top-quality courses, expert instructors, and interactive learning tools.
+    </p>
+    <div class="flex justify-center space-x-6">
+     <a class="inline-block px-8 py-4 bg-yellow-400 text-purple-900 rounded-lg text-lg font-semibold shadow-lg hover:bg-yellow-300 transition" href="#courses">
+      Explore Courses
+     </a>
+     <a class="inline-block px-8 py-4 border-2 border-yellow-400 text-yellow-400 rounded-lg text-lg font-semibold hover:bg-yellow-400 hover:text-purple-900 transition" href="#about">
+      Learn More
+     </a>
+    </div>
+   </section>
+   <section class="mb-24" id="courses">
+    <h2 class="text-4xl font-bold text-yellow-400 text-center mb-12 tracking-wide drop-shadow-lg">
+     Our Courses
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+     <article class="bg-gradient-to-tr from-purple-700 via-pink-700 to-red-700 rounded-3xl shadow-2xl p-6 flex flex-col hover:shadow-yellow-400 transition-shadow">
+      <img alt="Screenshot of Full Stack Web Development course interface with code editor and browser preview" class="rounded-2xl mb-6 object-cover w-full h-48 shadow-lg ring-4 ring-yellow-400" height="192" src="https://storage.googleapis.com/a1aa/image/3671e2e2-61ae-411c-97df-b6e50b8c33d1.jpg" width="320"/>
+      <h3 class="text-2xl font-semibold mb-2 text-yellow-400">
+       Full Stack Web Development
+      </h3>
+      <p class="text-yellow-200 flex-grow mb-4">
+       Learn to build modern, responsive websites and web apps using HTML, CSS, JavaScript, and backend technologies.
+      </p>
+      <div class="flex justify-between items-center text-yellow-300 font-semibold">
+       <span>12 weeks</span>
+       <button class="px-5 py-2 bg-yellow-400 text-purple-900 rounded-lg font-semibold hover:bg-yellow-300 transition">
+        Enroll Now
+       </button>
+      </div>
+     </article>
+     <article class="bg-gradient-to-tr from-purple-700 via-pink-700 to-red-700 rounded-3xl shadow-2xl p-6 flex flex-col hover:shadow-yellow-400 transition-shadow">
+      <img alt="Screenshot of Data Science and Machine Learning course showing data charts and Python code" class="rounded-2xl mb-6 object-cover w-full h-48 shadow-lg ring-4 ring-yellow-400" height="192" src="https://storage.googleapis.com/a1aa/image/5edc891a-c047-45b4-21d5-55dc4208be2c.jpg" width="320"/>
+      <h3 class="text-2xl font-semibold mb-2 text-yellow-400">
+       Data Science &amp; Machine Learning
+      </h3>
+      <p class="text-yellow-200 flex-grow mb-4">
+       Master data analysis, visualization, and machine learning algorithms using Python and real datasets.
+      </p>
+      <div class="flex justify-between items-center text-yellow-300 font-semibold">
+       <span>10 weeks</span>
+       <button class="px-5 py-2 bg-yellow-400 text-purple-900 rounded-lg font-semibold hover:bg-yellow-300 transition">
+        Enroll Now
+       </button>
+      </div>
+     </article>
+     <article class="bg-gradient-to-tr from-purple-700 via-pink-700 to-red-700 rounded-3xl shadow-2xl p-6 flex flex-col hover:shadow-yellow-400 transition-shadow">
+      <img alt="Screenshot of Digital Marketing Masterclass course showing social media analytics and campaign dashboard" class="rounded-2xl mb-6 object-cover w-full h-48 shadow-lg ring-4 ring-yellow-400" height="192" src="https://storage.googleapis.com/a1aa/image/078fe1d3-2c26-47ec-6559-4fb71001afc7.jpg" width="320"/>
+      <h3 class="text-2xl font-semibold mb-2 text-yellow-400">
+       Digital Marketing Masterclass
+      </h3>
+      <p class="text-yellow-200 flex-grow mb-4">
+       Learn SEO, social media marketing, email campaigns, and analytics to grow any business online.
+      </p>
+      <div class="flex justify-between items-center text-yellow-300 font-semibold">
+       <span>8 weeks</span>
+       <button class="px-5 py-2 bg-yellow-400 text-purple-900 rounded-lg font-semibold hover:bg-yellow-300 transition">
+        Enroll Now
+       </button>
+      </div>
+     </article>
+     <article class="bg-gradient-to-tr from-purple-700 via-pink-700 to-red-700 rounded-3xl shadow-2xl p-6 flex flex-col hover:shadow-yellow-400 transition-shadow">
+      <img alt="Screenshot of Graphic Design Fundamentals course showing design software interface and colorful artwork" class="rounded-2xl mb-6 object-cover w-full h-48 shadow-lg ring-4 ring-yellow-400" height="192" src="https://storage.googleapis.com/a1aa/image/7cd67347-69dc-4b62-c0ec-8be072e83151.jpg" width="320"/>
+      <h3 class="text-2xl font-semibold mb-2 text-yellow-400">
+       Graphic Design Fundamentals
+      </h3>
+      <p class="text-yellow-200 flex-grow mb-4">
+       Explore design principles, typography, and tools like Adobe Photoshop and Illustrator.
+      </p>
+      <div class="flex justify-between items-center text-yellow-300 font-semibold">
+       <span>6 weeks</span>
+       <button class="px-5 py-2 bg-yellow-400 text-purple-900 rounded-lg font-semibold hover:bg-yellow-300 transition">
+        Enroll Now
+       </button>
+      </div>
+     </article>
+     <article class="bg-gradient-to-tr from-purple-700 via-pink-700 to-red-700 rounded-3xl shadow-2xl p-6 flex flex-col hover:shadow-yellow-400 transition-shadow">
+      <img alt="Screenshot of Cybersecurity Essentials course showing network security diagrams and code" class="rounded-2xl mb-6 object-cover w-full h-48 shadow-lg ring-4 ring-yellow-400" height="192" src="https://storage.googleapis.com/a1aa/image/a4ae633b-7bee-41cc-cf58-b949ceb98884.jpg" width="320"/>
+      <h3 class="text-2xl font-semibold mb-2 text-yellow-400">
+       Cybersecurity Essentials
+      </h3>
+      <p class="text-yellow-200 flex-grow mb-4">
+       Understand security threats, encryption, and best practices to protect digital assets.
+      </p>
+      <div class="flex justify-between items-center text-yellow-300 font-semibold">
+       <span>7 weeks</span>
+       <button class="px-5 py-2 bg-yellow-400 text-purple-900 rounded-lg font-semibold hover:bg-yellow-300 transition">
+        Enroll Now
+       </button>
+      </div>
+     </article>
+     <article class="bg-gradient-to-tr from-purple-700 via-pink-700 to-red-700 rounded-3xl shadow-2xl p-6 flex flex-col hover:shadow-yellow-400 transition-shadow">
+      <img alt="Screenshot of English Language Proficiency course showing grammar exercises and vocabulary flashcards" class="rounded-2xl mb-6 object-cover w-full h-48 shadow-lg ring-4 ring-yellow-400" height="192" src="https://storage.googleapis.com/a1aa/image/06b83062-c4d2-4cda-46de-929bc6704c8f.jpg" width="320"/>
+      <h3 class="text-2xl font-semibold mb-2 text-yellow-400">
+       English Language Proficiency
+      </h3>
+      <p class="text-yellow-200 flex-grow mb-4">
+       Improve your English speaking, writing, and comprehension skills for academic and professional success.
+      </p>
+      <div class="flex justify-between items-center text-yellow-300 font-semibold">
+       <span>9 weeks</span>
+       <button class="px-5 py-2 bg-yellow-400 text-purple-900 rounded-lg font-semibold hover:bg-yellow-300 transition">
+        Enroll Now
+       </button>
+      </div>
+     </article>
+    </div>
+   </section>
+   <section class="mb-24" id="instructors">
+    <h2 class="text-4xl font-bold text-yellow-400 text-center mb-12 tracking-wide drop-shadow-lg">
+     Meet Our Instructors
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+     <article class="bg-gradient-to-tr from-purple-700 via-pink-700 to-red-700 rounded-3xl shadow-2xl p-8 flex flex-col items-center text-center hover:shadow-yellow-400 transition-shadow">
+      <img alt="Portrait of Sarah Johnson, expert Mathematics instructor with friendly smile and glasses" class="mb-6 rounded-full w-36 h-36 object-cover shadow-lg ring-4 ring-yellow-400" height="144" src="https://storage.googleapis.com/a1aa/image/8870804d-912c-4921-d795-543ec8daaadc.jpg" width="144"/>
+      <h3 class="text-2xl font-semibold mb-1 text-yellow-400">
+       Miss X
+      </h3>
+      <p class="text-yellow-300 font-medium mb-3">
+       Mathematics Instructor
+      </p>
+      <p class="text-yellow-200 max-w-xs mb-4">
+       Miss X has 10+ years of experience teaching algebra, calculus, and geometry with a passion for making math accessible.
+      </p>
+      <div class="flex space-x-4 text-yellow-400">
+       <a aria-label="Sarah Johnson Twitter" class="hover:text-yellow-300 transition" href="#">
+        <i class="fab fa-twitter fa-lg">
+        </i>
+       </a>
+       <a aria-label="Sarah Johnson LinkedIn" class="hover:text-yellow-300 transition" href="#">
+        <i class="fab fa-linkedin fa-lg">
+        </i>
+       </a>
+       <a aria-label="Sarah Johnson Facebook" class="hover:text-yellow-300 transition" href="#">
+        <i class="fab fa-facebook fa-lg">
+        </i>
+       </a>
+      </div>
+     </article>
+     <article class="bg-gradient-to-tr from-purple-700 via-pink-700 to-red-700 rounded-3xl shadow-2xl p-8 flex flex-col items-center text-center hover:shadow-yellow-400 transition-shadow">
+      <img alt="Portrait of Michael Lee, experienced Science instructor with confident smile and casual attire" class="mb-6 rounded-full w-36 h-36 object-cover shadow-lg ring-4 ring-yellow-400" height="144" src="https://storage.googleapis.com/a1aa/image/02b5b76d-d424-45a7-4806-b19f45216c8c.jpg" width="144"/>
+      <h3 class="text-2xl font-semibold mb-1 text-yellow-400">
+       Mr. Y
+      </h3>
+      <p class="text-yellow-300 font-medium mb-3">
+       Science Instructor
+      </p>
+      <p class="text-yellow-200 max-w-xs mb-4">
+       Mr. Y specializes in physics and chemistry, bringing real-world experiments and enthusiasm to every class.
+      </p>
+      <div class="flex space-x-4 text-yellow-400">
+       <a aria-label="Michael Lee Twitter" class="hover:text-yellow-300 transition" href="#">
+        <i class="fab fa-twitter fa-lg">
+        </i>
+       </a>
+       <a aria-label="Michael Lee LinkedIn" class="hover:text-yellow-300 transition" href="#">
+        <i class="fab fa-linkedin fa-lg">
+        </i>
+       </a>
+       <a aria-label="Michael Lee Facebook" class="hover:text-yellow-300 transition" href="#">
+        <i class="fab fa-facebook fa-lg">
+        </i>
+       </a>
+      </div>
+     </article>
+     <article class="bg-gradient-to-tr from-purple-700 via-pink-700 to-red-700 rounded-3xl shadow-2xl p-8 flex flex-col items-center text-center hover:shadow-yellow-400 transition-shadow">
+      <img alt="Portrait of Emily Davis, passionate Programming instructor with headset and laptop" class="mb-6 rounded-full w-36 h-36 object-cover shadow-lg ring-4 ring-yellow-400" height="144" src="https://storage.googleapis.com/a1aa/image/b1c85f4c-5765-4698-367f-c1f03a7ae6e1.jpg" width="144"/>
+      <h3 class="text-2xl font-semibold mb-1 text-yellow-400">
+       Miss Z
+      </h3>
+      <p class="text-yellow-300 font-medium mb-3">
+       Programming Instructor
+      </p>
+      <p class="text-yellow-200 max-w-xs mb-4">
+       Miss Z teaches Python, JavaScript, and web development with hands-on projects and personalized guidance.
+      </p>
+      <div class="flex space-x-4 text-yellow-400">
+       <a aria-label="Emily Davis Twitter" class="hover:text-yellow-300 transition" href="#">
+        <i class="fab fa-twitter fa-lg">
+        </i>
+       </a>
+       <a aria-label="Emily Davis LinkedIn" class="hover:text-yellow-300 transition" href="#">
+        <i class="fab fa-linkedin fa-lg">
+        </i>
+       </a>
+       <a aria-label="Emily Davis Facebook" class="hover:text-yellow-300 transition" href="#">
+        <i class="fab fa-facebook fa-lg">
+        </i>
+       </a>
+      </div>
+     </article>
+    </div>
+   </section>
+   <section class="mb-24" id="features">
+    <h2 class="text-4xl font-bold text-yellow-400 text-center mb-12 tracking-wide drop-shadow-lg">
+     Features That Empower You
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12">
+     <article class="bg-gradient-to-tr from-purple-700 via-pink-700 to-red-700 rounded-3xl shadow-2xl p-8 flex flex-col items-center text-center hover:shadow-yellow-400 transition-shadow">
+      <img alt="Illustration of interactive quizzes with checkmarks and question marks" class="mb-6 rounded-full w-36 h-36 object-cover shadow-lg ring-4 ring-yellow-400" height="144" src="https://storage.googleapis.com/a1aa/image/12e458a6-404d-4985-ad1a-c3940513a527.jpg" width="144"/>
+      <h3 class="text-2xl font-semibold mb-3 text-yellow-400">
+       Interactive Quizzes
+      </h3>
+      <p class="text-yellow-200 max-w-xs">
+       Test your knowledge with engaging quizzes after every lesson to reinforce learning.
+      </p>
+     </article>
+     <article class="bg-gradient-to-tr from-purple-700 via-pink-700 to-red-700 rounded-3xl shadow-2xl p-8 flex flex-col items-center text-center hover:shadow-yellow-400 transition-shadow">
+      <img alt="Illustration of progress tracking with charts and checkmarks" class="mb-6 rounded-full w-36 h-36 object-cover shadow-lg ring-4 ring-yellow-400" height="144" src="https://storage.googleapis.com/a1aa/image/bf8f659d-5454-4281-56ed-a752e61132bc.jpg" width="144"/>
+      <h3 class="text-2xl font-semibold mb-3 text-yellow-400">
+       Progress Tracking
+      </h3>
+      <p class="text-yellow-200 max-w-xs">
+       Monitor your learning journey with detailed progress reports and milestones.
+      </p>
+     </article>
+     <article class="bg-gradient-to-tr from-purple-700 via-pink-700 to-red-700 rounded-3xl shadow-2xl p-8 flex flex-col items-center text-center hover:shadow-yellow-400 transition-shadow">
+      <img alt="Illustration of live classes with teacher and students on video call" class="mb-6 rounded-full w-36 h-36 object-cover shadow-lg ring-4 ring-yellow-400" height="144" src="https://storage.googleapis.com/a1aa/image/d202c997-20ee-430f-9738-586baeb24dbd.jpg" width="144"/>
+      <h3 class="text-2xl font-semibold mb-3 text-yellow-400">
+       Live Classes
+      </h3>
+      <p class="text-yellow-200 max-w-xs">
+       Join live sessions with expert instructors and get your questions answered in real-time.
+      </p>
+     </article>
+     <article class="bg-gradient-to-tr from-purple-700 via-pink-700 to-red-700 rounded-3xl shadow-2xl p-8 flex flex-col items-center text-center hover:shadow-yellow-400 transition-shadow">
+      <img alt="Illustration of test with multiple choice questions and descriptive answers" class="mb-6 rounded-full w-36 h-36 object-cover shadow-lg ring-4 ring-yellow-400" height="144" src="https://storage.googleapis.com/a1aa/image/80de5099-09e8-43db-e32b-0f5928da0e47.jpg" width="144"/>
+      <h3 class="text-2xl font-semibold mb-3 text-yellow-400">
+       MCQ &amp; Descriptive Tests
+      </h3>
+      <p class="text-yellow-200 max-w-xs">
+       Assess your understanding with both multiple-choice and descriptive tests for comprehensive evaluation.
+      </p>
+     </article>
+     <article class="bg-gradient-to-tr from-purple-700 via-pink-700 to-red-700 rounded-3xl shadow-2xl p-8 flex flex-col items-center text-center hover:shadow-yellow-400 transition-shadow">
+      <img alt="Illustration of offline class recording and notes with video player and notebook" class="mb-6 rounded-full w-36 h-36 object-cover shadow-lg ring-4 ring-yellow-400" height="144" src="https://storage.googleapis.com/a1aa/image/3f3a3a3a-3f3a-4f3a-9f3a-3f3a3f3a3f3a.jpg" width="144"/>
+      <h3 class="text-2xl font-semibold mb-3 text-yellow-400">
+       Offline Class Record &amp; Notes
+      </h3>
+      <p class="text-yellow-200 max-w-xs">
+       Access recorded classes and downloadable notes anytime, even without internet connection.
+      </p>
+     </article>
+    </div>
+   </section>
+   <section class="mb-24" id="pricing">
+    <h2 class="text-4xl font-bold text-yellow-400 text-center mb-12 tracking-wide drop-shadow-lg">
+     Pricing Plans
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+     <div class="bg-gradient-to-tr from-purple-700 via-pink-700 to-red-700 rounded-3xl shadow-2xl p-8 flex flex-col items-center text-center hover:shadow-yellow-400 transition-shadow">
+      <h3 class="text-2xl font-semibold text-yellow-400 mb-4">
+       Basic
+      </h3>
+      <p class="text-5xl font-extrabold text-yellow-300 mb-6">
+       $19
+       <span class="text-lg font-normal">
+        /mo
+       </span>
+      </p>
+      <ul class="text-yellow-200 mb-8 space-y-3">
+       <li>
+        Access to 10 courses
+       </li>
+       <li>
+        Community forums
+       </li>
+       <li>
+        Email support
+       </li>
+      </ul>
+      <button class="px-8 py-3 bg-yellow-400 text-purple-900 rounded-lg font-semibold hover:bg-yellow-300 transition">
+       Get Started
+      </button>
+     </div>
+     <div class="bg-yellow-400 rounded-3xl shadow-2xl p-8 flex flex-col items-center text-center text-purple-900 relative">
+      <div class="absolute -top-5 px-4 py-1 bg-purple-900 rounded-full text-sm font-semibold tracking-wide shadow-lg text-yellow-400">
+       Most Popular
+      </div>
+      <h3 class="text-2xl font-semibold mb-4">
+       Pro
+      </h3>
+      <p class="text-5xl font-extrabold mb-6">
+       $49
+       <span class="text-lg font-normal">
+        /mo
+       </span>
+      </p>
+      <ul class="mb-8 space-y-3">
+       <li>
+        Unlimited course access
+       </li>
+       <li>
+        Live classes &amp; webinars
+       </li>
+       <li>
+        Priority support
+       </li>
+      </ul>
+      <button class="px-8 py-3 bg-purple-900 text-yellow-400 rounded-lg font-semibold hover:bg-purple-800 transition">
+       Get Started
+      </button>
+     </div>
+     <div class="bg-gradient-to-tr from-purple-700 via-pink-700 to-red-700 rounded-3xl shadow-2xl p-8 flex flex-col items-center text-center hover:shadow-yellow-400 transition-shadow">
+      <h3 class="text-2xl font-semibold text-yellow-400 mb-4">
+       Enterprise
+      </h3>
+      <p class="text-5xl font-extrabold text-yellow-300 mb-6">
+       $99
+       <span class="text-lg font-normal">
+        /mo
+       </span>
+      </p>
+      <ul class="text-yellow-200 mb-8 space-y-3">
+       <li>
+        Team management
+       </li>
+       <li>
+        Custom content
+       </li>
+       <li>
+        Dedicated support
+       </li>
+      </ul>
+      <button class="px-8 py-3 bg-yellow-400 text-purple-900 rounded-lg font-semibold hover:bg-yellow-300 transition">
+       Contact Sales
+      </button>
+     </div>
+    </div>
+   </section>
+   <section class="mb-24 max-w-4xl mx-auto text-center px-6 sm:px-0" id="about">
+    <h2 class="text-4xl font-bold text-yellow-400 mb-8 tracking-wide drop-shadow-lg">
+     About EduLearn
+    </h2>
+    <p class="text-yellow-200 text-lg leading-relaxed mb-6">
+     EduLearn is a modern online educational platform dedicated to providing high-quality courses and expert instructors to learners worldwide. Our mission is to empower individuals through accessible, engaging, and interactive learning experiences.
+    </p>
+    <p class="text-yellow-200 text-lg leading-relaxed">
+     Whether you're looking to advance your career, learn a new skill, or explore a passion, EduLearn offers a diverse range of courses tailored to your needs. Join our community and start your learning journey today!
+    </p>
+   </section>
+   <section class="mb-24 max-w-3xl mx-auto px-6 sm:px-0" id="contact">
+    <h2 class="text-4xl font-bold text-yellow-400 text-center mb-8 tracking-wide drop-shadow-lg">
+     Contact Us
+    </h2>
+    <form action="#" class="bg-gradient-to-tr from-purple-700 via-pink-700 to-red-700 rounded-3xl shadow-2xl p-10" method="POST">
+     <div class="mb-6">
+      <label class="block text-yellow-300 font-semibold mb-2" for="name">
+       Name
+      </label>
+      <input class="w-full border border-yellow-400 bg-purple-900 text-yellow-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition" id="name" name="name" placeholder="Your full name" required="" type="text"/>
+     </div>
+     <div class="mb-6">
+      <label class="block text-yellow-300 font-semibold mb-2" for="email">
+       Email
+      </label>
+      <input class="w-full border border-yellow-400 bg-purple-900 text-yellow-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition" id="email" name="email" placeholder="you@example.com" required="" type="email"/>
+     </div>
+     <div class="mb-6">
+      <label class="block text-yellow-300 font-semibold mb-2" for="message">
+       Message
+      </label>
+      <textarea class="w-full border border-yellow-400 bg-purple-900 text-yellow-200 rounded-lg px-4 py-3 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition" id="message" name="message" placeholder="Write your message here..." required=""></textarea>
+     </div>
+     <button class="w-full bg-yellow-400 text-purple-900 font-semibold py-3 rounded-lg hover:bg-yellow-300 transition" type="submit">
+      Send Message
+     </button>
+    </form>
+   </section>
+   <section class="mb-12 max-w-3xl mx-auto px-6 sm:px-0 text-center text-yellow-300 select-none">
+    <p class="mb-1 text-lg font-semibold">Designed with <span class="text-red-500">❤️</span> by <span class="font-bold text-yellow-400">Kanan Pandit</span></p>
+    <p class="mb-1">💼 Data Scientist &amp; Creative Developer</p>
+    <p class="mb-1">🌐 <a href="https://kananpandit.dev" target="_blank" rel="noopener noreferrer" class="underline hover:text-yellow-400">kananpandit.dev</a></p>
+    <p>📧 <a href="mailto:kananpandit@gmail.com" class="underline hover:text-yellow-400">kananpandit@gmail.com</a></p>
+   </section>
+  </main>
+  <footer class="bg-gradient-to-r from-purple-800 via-pink-800 to-red-700 border-t border-yellow-400">
+   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-8 flex flex-col sm:flex-row justify-between items-center">
+    <p class="text-yellow-300 text-sm select-none">
+     © 2024 EduLearn. All rights reserved.
+    </p>
+    <div class="flex space-x-8 mt-4 sm:mt-0 text-yellow-300">
+     <a aria-label="Facebook" class="hover:text-yellow-400 transition" href="#">
+      <i class="fab fa-facebook fa-lg"></i>
+     </a>
+     <a aria-label="Twitter" class="hover:text-yellow-400 transition" href="#">
+      <i class="fab fa-twitter fa-lg"></i>
+     </a>
+     <a aria-label="Instagram" class="hover:text-yellow-400 transition" href="#">
+      <i class="fab fa-instagram fa-lg"></i>
+     </a>
+     <a aria-label="LinkedIn" class="hover:text-yellow-400 transition" href="#">
+      <i class="fab fa-linkedin fa-lg"></i>
+     </a>
+    </div>
+   </div>
+  </footer>
+
+  <!-- Login Modal -->
+  <div aria-hidden="true" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden" id="login-modal">
+   <div class="bg-gradient-to-tr from-purple-700 via-pink-700 to-red-700 rounded-3xl shadow-2xl p-10 max-w-md w-full relative">
+    <button aria-label="Close login modal" class="absolute top-4 right-4 text-yellow-400 hover:text-yellow-300 focus:outline-none" id="login-close">
+     <i class="fas fa-times fa-lg"></i>
+    </button>
+    <h3 class="text-3xl font-bold text-yellow-400 mb-6 text-center">
+     Log In to EduLearn
+    </h3>
+    <form action="#" method="POST" class="space-y-6">
+     <div>
+      <label class="block text-yellow-300 font-semibold mb-2" for="login-email">
+       Email
+      </label>
+      <input class="w-full border border-yellow-400 bg-purple-900 text-yellow-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition" id="login-email" name="email" placeholder="you@example.com" required="" type="email"/>
+     </div>
+     <div>
+      <label class="block text-yellow-300 font-semibold mb-2" for="login-password">
+       Password
+      </label>
+      <input class="w-full border border-yellow-400 bg-purple-900 text-yellow-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition" id="login-password" name="password" placeholder="********" required="" type="password"/>
+     </div>
+     <button class="w-full bg-yellow-400 text-purple-900 font-semibold py-3 rounded-lg hover:bg-yellow-300 transition" type="submit">
+      Log In
+     </button>
+    </form>
+    <p class="mt-6 text-yellow-300 text-center text-sm">
+     Don't have an account?
+     <button class="text-yellow-400 font-semibold hover:text-yellow-300 focus:outline-none" id="login-to-signup">
+      Sign Up
+     </button>
+    </p>
+   </div>
+  </div>
+
+  <!-- Signup Modal -->
+  <div aria-hidden="true" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden" id="signup-modal">
+   <div class="bg-gradient-to-tr from-purple-700 via-pink-700 to-red-700 rounded-3xl shadow-2xl p-10 max-w-md w-full relative">
+    <button aria-label="Close signup modal" class="absolute top-4 right-4 text-yellow-400 hover:text-yellow-300 focus:outline-none" id="signup-close">
+     <i class="fas fa-times fa-lg"></i>
+    </button>
+    <h3 class="text-3xl font-bold text-yellow-400 mb-6 text-center">
+     Sign Up for EduLearn
+    </h3>
+    <form action="#" method="POST" class="space-y-6">
+     <div>
+      <label class="block text-yellow-300 font-semibold mb-2" for="signup-name">
+       Full Name
+      </label>
+      <input class="w-full border border-yellow-400 bg-purple-900 text-yellow-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition" id="signup-name" name="name" placeholder="Your full name" required="" type="text"/>
+     </div>
+     <div>
+      <label class="block text-yellow-300 font-semibold mb-2" for="signup-email">
+       Email
+      </label>
+      <input class="w-full border border-yellow-400 bg-purple-900 text-yellow-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition" id="signup-email" name="email" placeholder="you@example.com" required="" type="email"/>
+     </div>
+     <div>
+      <label class="block text-yellow-300 font-semibold mb-2" for="signup-password">
+       Password
+      </label>
+      <input class="w-full border border-yellow-400 bg-purple-900 text-yellow-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition" id="signup-password" name="password" placeholder="********" required="" type="password"/>
+     </div>
+     <button class="w-full bg-yellow-400 text-purple-900 font-semibold py-3 rounded-lg hover:bg-yellow-300 transition" type="submit">
+      Sign Up
+     </button>
+    </form>
+    <p class="mt-6 text-yellow-300 text-center text-sm">
+     Already have an account?
+     <button class="text-yellow-400 font-semibold hover:text-yellow-300 focus:outline-none" id="signup-to-login">
+      Log In
+     </button>
+    </p>
+   </div>
+  </div>
+
+  <script>
+   const menuBtn = document.getElementById('menu-btn');
+   const mobileMenu = document.getElementById('mobile-menu');
+   menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+   });
+
+   // Modal elements
+   const loginModal = document.getElementById('login-modal');
+   const signupModal = document.getElementById('signup-modal');
+
+   // Open modal buttons
+   const loginLinks = [
+    document.getElementById('login-link'),
+    document.getElementById('login-link-mobile'),
+    document.getElementById('login-link-mobile-menu')
+   ];
+   const signupLinks = [
+    document.getElementById('signup-link'),
+    document.getElementById('signup-link-mobile'),
+    document.getElementById('signup-link-mobile-menu')
+   ];
+
+   // Close buttons
+   const loginClose = document.getElementById('login-close');
+   const signupClose = document.getElementById('signup-close');
+
+   // Switch buttons inside modals
+   const loginToSignup = document.getElementById('login-to-signup');
+   const signupToLogin = document.getElementById('signup-to-login');
+
+   // Functions to open/close modals
+   function openLogin() {
+    loginModal.classList.remove('hidden');
+    signupModal.classList.add('hidden');
+    mobileMenu.classList.add('hidden');
+   }
+   function openSignup() {
+    signupModal.classList.remove('hidden');
+    loginModal.classList.add('hidden');
+    mobileMenu.classList.add('hidden');
+   }
+   function closeModals() {
+    loginModal.classList.add('hidden');
+    signupModal.classList.add('hidden');
+   }
+
+   // Add event listeners for open modal buttons
+   loginLinks.forEach(link => {
+    if(link) link.addEventListener('click', openLogin);
+   });
+   signupLinks.forEach(link => {
+    if(link) link.addEventListener('click', openSignup);
+   });
+
+   // Close modal buttons
+   loginClose.addEventListener('click', closeModals);
+   signupClose.addEventListener('click', closeModals);
+
+   // Switch modals
+   loginToSignup.addEventListener('click', openSignup);
+   signupToLogin.addEventListener('click', openLogin);
+
+   // Close modals on outside click
+   window.addEventListener('click', (e) => {
+    if(e.target === loginModal) closeModals();
+    if(e.target === signupModal) closeModals();
+   });
+
+   // Close modals on Escape key
+   window.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape') closeModals();
+   });
+  </script>
+ </body>
+</html>
